@@ -1,3 +1,3 @@
-# custom-name-generator
+# Custom Name Generator
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-m71qnk)
+[A React-based custom name generator, which takes user input to randomly generate a wide variety of names.](https://stackblitz.com/edit/react-m71qnk)
