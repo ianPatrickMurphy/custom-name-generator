@@ -14,8 +14,8 @@ export default class NameGenerator extends React.Component {
   }
 
   handleClick(e) {
-    e.preventDefault();
-    console.log('Submit Button Pressed');
+    console.log(nameFirstPart.value.split('\n'))
+    
   }
 
   handleChange(e) {
@@ -33,23 +33,27 @@ export default class NameGenerator extends React.Component {
       <div>
 
         <button 
-        onClick={this.handleClick}>
-        Generator Name
+          onClick={this.handleClick}>
+          Generator Name
         </button>
 
         <br/>
 
         <textarea 
-        id = "nameFirstPart"
-        onChange={this.handleChange}/>
+          id = "nameFirstPart"
+          onChange={this.handleChange}
+        />
 
         <textarea 
-        id = "nameSecondPart"
-        onChange={this.handleChange}/>
+          id = "nameSecondPart"
+          onChange={this.handleChange}
+        />
 
         <textarea 
-        id = "nameThirdPart"
-        onChange={this.handleChange}/>
+          id = "nameThirdPart"
+          onChange={this.handleChange}
+        />
+
       </div>
     );
   }
