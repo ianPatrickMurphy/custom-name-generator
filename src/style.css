@@ -7,3 +7,7 @@ body {
 textarea {
   width: 25%;
 }
+
+div {
+  text-align: center;
+}

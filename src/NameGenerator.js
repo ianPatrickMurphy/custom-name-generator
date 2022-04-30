@@ -33,7 +33,8 @@ export default class NameGenerator extends React.Component {
     this.setState({generatedName: 
       nameFirstPartArray[Math.floor(Math.random() * nameFirstPartArray.length)].toString() +
       nameSecondPartArray[Math.floor(Math.random() * nameSecondPartArray.length)].toString() +
-      nameThirdPartArray[Math.floor(Math.random() * nameThirdPartArray.length)].toString()});
+      nameThirdPartArray[Math.floor(Math.random() * nameThirdPartArray.length)].toString()
+    });
 
   }
 
@@ -56,18 +57,19 @@ export default class NameGenerator extends React.Component {
     return (
       <div>
 
+        <h2>{this.state.generatedName}</h2>
+
         <button 
           onClick={this.handleClick}>
           Generate Name
         </button>
 
-        <h2>{this.state.generatedName}</h2>
+        <br/><br/>
 
         <textarea 
           id = "nameFirstPart"
           onChange={this.handleChange}
-        >
-          {
+          value = {
             "Zeno\n" +
             "Morthil\n" +
             "Pharom\n" +
@@ -87,23 +89,20 @@ export default class NameGenerator extends React.Component {
             "Lenna\n" +
             "Syvis"
           }
-          
-        </textarea>
+          />
 
         <textarea 
           id = "nameSecondPart"
           onChange={this.handleChange}
-          >
-          {
-            " the "
+          value = {
+            ", the "
           }
-        </textarea>
+          />
 
         <textarea 
           id = "nameThirdPart"
           onChange={this.handleChange}
-          >
-          {
+          value = {
             "Omen\n" +
             "Assassin\n" +
             "Bloodhound\n" +
@@ -155,7 +154,7 @@ export default class NameGenerator extends React.Component {
             "Heinous\n" +
             "Monstrous"
           }
-        </textarea>
+          />
 
       </div>
     );
