@@ -4,18 +4,30 @@ import "./style.css";
 export default class NameGenerator extends React.Component {
 
   constructor(props) {
+    
     super(props);
+
     this.state = {
       nameFirstPart: "",
       nameSecondPart: "",
-      nameThirdPart: ""
+      nameThirdPart: "",
+      generatedName: "Your Name Here"
     };
+
     this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(e) {
-    console.log(nameFirstPart.value.split('\n'))
-    
+    const nameFirstPartArray = nameFirstPart.value.split('\n');
+    const nameSecondPartArray = nameSecondPart.value.split('\n');
+    const nameThirdPartArray = nameThirdPart.value.split('\n');
+
+    this.setState({generatedName: 
+      nameFirstPartArray[Math.floor(Math.random() * nameFirstPartArray.length)].toString() + ' ' +
+      nameSecondPartArray[Math.floor(Math.random() * nameSecondPartArray.length)].toString() + ' ' +
+      nameThirdPartArray[Math.floor(Math.random() * nameThirdPartArray.length)].toString()});
+
   }
 
   handleChange(e) {
@@ -34,10 +46,10 @@ export default class NameGenerator extends React.Component {
 
         <button 
           onClick={this.handleClick}>
-          Generator Name
+          Generate Name
         </button>
 
-        <br/>
+        <h2>{this.state.generatedName}</h2>
 
         <textarea 
           id = "nameFirstPart"
