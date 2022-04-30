@@ -8,7 +8,24 @@ export default class NameGenerator extends React.Component {
     super(props);
 
     this.state = {
-      nameFirstPart: "",
+      nameFirstPart: "Zeno\n" +
+      "Morthil\n" +
+      "Pharom\n" +
+      "Fayeth\n" +
+      "Ragnor\n" +
+      "Volodar\n" +
+      "Romulus\n" +
+      "Wulfric\n" +
+      "Acrid\n" +
+      "Meira\n" +
+      "Liluth\n" +
+      "Erina\n" +
+      "Thalia\n" +
+      "Fyra\n" +
+      "Baldith\n" +
+      "Sionia\n" +
+      "Lenna\n" +
+      "Syvis",
       nameSecondPart: "",
       nameThirdPart: "",
       generatedName: "Your Name Here"
@@ -69,7 +86,7 @@ export default class NameGenerator extends React.Component {
         <textarea 
           id = "nameFirstPart"
           onChange={this.handleChange}
-          value = {
+          defaultValue = {
             "Zeno\n" +
             "Morthil\n" +
             "Pharom\n" +
@@ -94,7 +111,7 @@ export default class NameGenerator extends React.Component {
         <textarea 
           id = "nameSecondPart"
           onChange={this.handleChange}
-          value = {
+          defaultValue = {
             ", the "
           }
           />
@@ -102,7 +119,7 @@ export default class NameGenerator extends React.Component {
         <textarea 
           id = "nameThirdPart"
           onChange={this.handleChange}
-          value = {
+          defaultValue = {
             "Omen\n" +
             "Assassin\n" +
             "Bloodhound\n" +
