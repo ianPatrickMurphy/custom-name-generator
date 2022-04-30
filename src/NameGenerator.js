@@ -19,13 +19,20 @@ export default class NameGenerator extends React.Component {
   }
 
   handleClick(e) {
+
+    this.generateName();
+
+  }
+
+  generateName() {
+
     const nameFirstPartArray = nameFirstPart.value.split('\n');
     const nameSecondPartArray = nameSecondPart.value.split('\n');
     const nameThirdPartArray = nameThirdPart.value.split('\n');
 
     this.setState({generatedName: 
-      nameFirstPartArray[Math.floor(Math.random() * nameFirstPartArray.length)].toString() + ' ' +
-      nameSecondPartArray[Math.floor(Math.random() * nameSecondPartArray.length)].toString() + ' ' +
+      nameFirstPartArray[Math.floor(Math.random() * nameFirstPartArray.length)].toString() +
+      nameSecondPartArray[Math.floor(Math.random() * nameSecondPartArray.length)].toString() +
       nameThirdPartArray[Math.floor(Math.random() * nameThirdPartArray.length)].toString()});
 
   }
@@ -38,6 +45,11 @@ export default class NameGenerator extends React.Component {
     }else if(e.target.id == "nameThirdPart"){
       this.setState({nameThirdPart: e.target.value});
     }
+  }
+
+  componentDidMount() {
+
+    this.generateName()
   }
 
   render() {
@@ -54,17 +66,96 @@ export default class NameGenerator extends React.Component {
         <textarea 
           id = "nameFirstPart"
           onChange={this.handleChange}
-        />
+        >
+          {
+            "Zeno\n" +
+            "Morthil\n" +
+            "Pharom\n" +
+            "Fayeth\n" +
+            "Ragnor\n" +
+            "Volodar\n" +
+            "Romulus\n" +
+            "Wulfric\n" +
+            "Acrid\n" +
+            "Meira\n" +
+            "Liluth\n" +
+            "Erina\n" +
+            "Thalia\n" +
+            "Fyra\n" +
+            "Baldith\n" +
+            "Sionia\n" +
+            "Lenna\n" +
+            "Syvis"
+          }
+          
+        </textarea>
 
         <textarea 
           id = "nameSecondPart"
           onChange={this.handleChange}
-        />
+          >
+          {
+            " the "
+          }
+        </textarea>
 
         <textarea 
           id = "nameThirdPart"
           onChange={this.handleChange}
-        />
+          >
+          {
+            "Omen\n" +
+            "Assassin\n" +
+            "Bloodhound\n" +
+            "Duelist\n" +
+            "Chieftain\n" +
+            "Sentinel\n" +
+            "Soldier\n" +
+            "Dragon\n" +
+            "Watchdog\n" +
+            "Troll\n" +
+            "Unforgiven\n" +
+            "Immortal\n" +
+            "Severed\n" +
+            "Hunter\n" +
+            "Beastman\n" +
+            "Warden\n" +
+            "Mariner\n" +
+            "Spirit\n" +
+            "Golem\n" +
+            "Hunter\n" +
+            "Guardian\n" +
+            "Grafted\n" +
+            "Hero of Zamor\n" +
+            "Blight\n" +
+            "Thief\n" +
+            "Noble\n" +
+            "Priest\n" +
+            "Kindred\n" +
+            "Merciful\n" +
+            "Puppet\n" +
+            "Blind\n" +
+            "Last King\n" +
+            "Forsaken\n" +
+            "All-knowing\n" +
+            "Lord of All\n" +
+            "Unseen\n" +
+            "Giant\n" +
+            "Nearly Headless\n" +
+            "Foreboding\n" +
+            "Foul\n" +
+            "Rancid\n" +
+            "Amorphous\n" +
+            "Tenebrous\n" +
+            "Unintelligible\n" +
+            "Cannibal\n" +
+            "Cruel\n" +
+            "Detestable\n" +
+            "Hairy\n" +
+            "Heinous\n" +
+            "Monstrous"
+          }
+        </textarea>
 
       </div>
     );
