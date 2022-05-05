@@ -8,27 +8,10 @@ export default class NameGenerator extends React.Component {
     super(props);
 
     this.state = {
-      nameFirstPart: "Zeno\n" +
-      "Morthil\n" +
-      "Pharom\n" +
-      "Fayeth\n" +
-      "Ragnor\n" +
-      "Volodar\n" +
-      "Romulus\n" +
-      "Wulfric\n" +
-      "Acrid\n" +
-      "Meira\n" +
-      "Liluth\n" +
-      "Erina\n" +
-      "Thalia\n" +
-      "Fyra\n" +
-      "Baldith\n" +
-      "Sionia\n" +
-      "Lenna\n" +
-      "Syvis",
+      nameFirstPart: "",
       nameSecondPart: "",
       nameThirdPart: "",
-      generatedName: "Your Name Here"
+      generatedName: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -41,6 +24,8 @@ export default class NameGenerator extends React.Component {
 
   }
 
+  // split the string in each text box into an array of names
+  // then select a random element from each array using a random number between 0 and the array length
   generateName() {
 
     const nameFirstPartArray = nameFirstPart.value.split('\n');
@@ -55,6 +40,7 @@ export default class NameGenerator extends React.Component {
 
   }
 
+  // When the user names changes to the text, update the string storing the names.
   handleChange(e) {
     if(e.target.id == "nameFirstPart"){
       this.setState({nameFirstPart: e.target.value});
@@ -66,8 +52,7 @@ export default class NameGenerator extends React.Component {
   }
 
   componentDidMount() {
-
-    this.generateName()
+    this.generateName() // generate a name immediately when the user enters the page.
   }
 
   render() {
@@ -86,7 +71,7 @@ export default class NameGenerator extends React.Component {
         <textarea 
           id = "nameFirstPart"
           onChange={this.handleChange}
-          defaultValue = {
+          defaultValue = {  //provide the user with default names to demonstrate how the app works
             "Zeno\n" +
             "Morthil\n" +
             "Pharom\n" +
@@ -111,7 +96,7 @@ export default class NameGenerator extends React.Component {
         <textarea 
           id = "nameSecondPart"
           onChange={this.handleChange}
-          defaultValue = {
+          defaultValue = {  //provide the user with default names to demonstrate how the app works
             ", the "
           }
           />
@@ -119,7 +104,7 @@ export default class NameGenerator extends React.Component {
         <textarea 
           id = "nameThirdPart"
           onChange={this.handleChange}
-          defaultValue = {
+          defaultValue = {  //provide the user with default names to demonstrate how the app works
             "Omen\n" +
             "Assassin\n" +
             "Bloodhound\n" +
